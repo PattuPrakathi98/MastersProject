@@ -32,6 +32,7 @@ test('Filter transactions by type (Incoming)', async () => {
     // Ensure transactions are filtered by counting rows
     const rows = await page.locator("//div[@class='webix_column  webix_first webix_select_mark']/div").count();
     
+    
     // Expect at least one transaction to be displayed
     expect(rows).toBeGreaterThan(0);
 
