@@ -79,7 +79,7 @@ test('Retrive Total Payment based on Payment History', async () => {
     let totalPayment = totalPaymanetAfterSplit[1];
     //console.log("totalPayment: ", totalPayment);
 
-    console.log("Execuuted: Retrive Total Payment based on Payment History tests");
+    console.log("Execuuted: Retrive Total Payment based on Payment History test");
     
     
 });
