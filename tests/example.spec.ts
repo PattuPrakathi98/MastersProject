@@ -11,12 +11,12 @@ test.beforeEach(async ({ browser }) => {
 });
 
 //completed
-test('Verify page URL', { tag: '@regression'} ,async () => {
+test('Verify page URL',async () => {
     await expect(page).toHaveURL(BASE_URL);
     console.log("Executed: Verify page URL");
 });
 
-test('Verify page title',  { tag: '@regression'},  async () => {
+test('Verify page title',  async () => {
     await expect(page).toHaveTitle(/Webix Banking App/i);
     console.log("Executed: Verify page title");
 });
@@ -70,9 +70,20 @@ test('Sort transactions by amount (Sum)', async () => {
 });
 
 //completed
+test('Verify page URL', { tag: '@regression'} ,async () => {
+    await expect(page).toHaveURL(BASE_URL);
+    console.log("Executed: Verify page URL");
+});
+
+test('Verify page title',  { tag: '@regression'},  async () => {
+    await expect(page).toHaveTitle(/Webix Banking App/i);
+    console.log("Executed: Verify page title");
+});
+
+//completed
 test('Retrive Total Payment based on Payment History', async () => {
     await page.locator("//div[@webix_tm_id='payhistoryview']/span[text()='Payment History']").click();
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(20000);
     
     let totalPaymentBeforeSplit = await page.locator("//div[@class='webix_hcolumn']/div[@class='webix_hcell webix_last webix_last_row']").nth(1).innerText();
     let totalPaymanetAfterSplit = totalPaymentBeforeSplit.split('$');
@@ -88,7 +99,7 @@ test('Retrive Total Payment based on Payment History', async () => {
 test('Test Notification', async () => {
 
     await page.locator("//button[@class='webix_icon_button']/following::span[@class='webix_badge']").click();
-    await page.waitForTimeout(3000);
+    await page.waitForTimeout(30000);
     var notifications = await page.locator("//span[@class='message']").allTextContents();
     for (let i = 0; i < notifications.length; i++) {
         const notification = notifications[i];
@@ -115,7 +126,7 @@ test('Verify Add Customer Flow',  { tag: '@regression'},async()=>{
 //   await expect(page.locator("//div[@class='webix_message webix_info']")).toBeVisible();
 
   //console.log("User Profile Created");
-
+  await page.waitForTimeout(30000);
   console.log("Executed: Verify Add Customer Flows");
   
 });
