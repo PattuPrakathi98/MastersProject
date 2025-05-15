@@ -99,7 +99,7 @@ test('Retrive Total Payment based on Payment History', async () => {
 test('Test Notification', async () => {
 
     await page.locator("//button[@class='webix_icon_button']/following::span[@class='webix_badge']").click();
-    await page.waitForTimeout(30000);
+    await page.waitForTimeout(20000);
     var notifications = await page.locator("//span[@class='message']").allTextContents();
     for (let i = 0; i < notifications.length; i++) {
         const notification = notifications[i];
@@ -126,7 +126,7 @@ test('Verify Add Customer Flow',  { tag: '@regression'},async()=>{
 //   await expect(page.locator("//div[@class='webix_message webix_info']")).toBeVisible();
 
   //console.log("User Profile Created");
-  await page.waitForTimeout(30000);
+  await page.waitForTimeout(20000);
   console.log("Executed: Verify Add Customer Flows");
   
 });
