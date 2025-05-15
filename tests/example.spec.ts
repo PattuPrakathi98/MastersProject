@@ -11,12 +11,12 @@ test.beforeEach(async ({ browser }) => {
 });
 
 //completed
-test('Verify page URL',async () => {
+test('Verify webix  page URL',async () => {
     await expect(page).toHaveURL(BASE_URL);
     console.log("Executed: Verify page URL");
 });
 
-test('Verify page title',  async () => {
+test('Verify webix page title',  async () => {
     await expect(page).toHaveTitle(/Webix Banking App/i);
     console.log("Executed: Verify page title");
 });
