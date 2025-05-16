@@ -8,6 +8,7 @@ test.beforeEach(async ({ browser }) => {
     var context = await browser.newContext();
     page = await context.newPage();
     await page.goto(BASE_URL);
+    console.log("Testing")
 });
 
 //completed
